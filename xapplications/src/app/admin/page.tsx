@@ -55,7 +55,7 @@ export default async function AdminPage() {
             </CardHeader>
             <CardContent className="grid grid-cols-4 gap-8">
               {applications.map((application) => (
-                <Card>
+                <Card key={application.id}>
                   <CardHeader>
                     <CardTitle className="text-[15px] font-semibold">
                       {application.name}

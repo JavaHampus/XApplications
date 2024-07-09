@@ -29,7 +29,7 @@ export default async function Home() {
           </p>
           <div className="pt-12 grid grid-cols-3 text-left gap-8 px-64">
             {applications.map((application) => (
-              <Card className="shadow-xl flex-col justify-between">
+              <Card className="shadow-xl flex-col justify-between" key={application.id}>
                 <CardHeader>
                   <div className="flex flex-row justify-between">
                     <CardTitle className="text-[16px] font-semibold">
