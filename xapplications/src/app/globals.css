@@ -11,6 +11,12 @@
       --background: 0 0% 100%;
       --foreground: 0 0% 3.9%;
 
+      --chart-1: 359 2% 90%;
+      --chart-2: 240 1% 74%;
+      --chart-3: 240 1% 58%;
+      --chart-4: 240 1% 42%;
+      --chart-5: 240 2% 26%;
+
       --card: 0 0% 100%;
       --card-foreground: 0 0% 3.9%;
 
@@ -45,6 +51,12 @@
 
       --card: 0 0% 3.9%;
       --card-foreground: 0 0% 98%;
+
+      --chart-1: 359 2% 90%;
+      --chart-2: 240 1% 74%;
+      --chart-3: 240 1% 58%;
+      --chart-4: 240 1% 42%;
+      --chart-5: 240 2% 26%;
 
       --popover: 0 0% 3.9%;
       --popover-foreground: 0 0% 98%;

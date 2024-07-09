@@ -1,11 +1,11 @@
 'use server'
 
-import { getServerSession } from "next-auth";
-import { createConnection } from "../database-connection"
+import { DEPARTMENT } from "@/config/config";
 import { authOptions } from "@/lib/auth";
 import { ExtentedUser } from "@/lib/utils";
-import { DEPARTMENT } from "@/config/config";
 import Applications from "@/schemas/applications";
+import { getServerSession } from "next-auth";
+import { createConnection } from "../database-connection";
 
 export const deleteQuestionAction = async (applicationId: string, position: number) => {
     const session = await getServerSession(authOptions) as ExtentedUser;

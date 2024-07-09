@@ -3,9 +3,9 @@
 import { DEPARTMENT } from "@/config/config";
 import { authOptions } from "@/lib/auth";
 import { ExtentedUser } from "@/lib/utils";
+import Applications from "@/schemas/applications";
 import { getServerSession } from "next-auth";
 import { createConnection } from "../database-connection";
-import Applications from "@/schemas/applications";
 
 type PositionPath = "UP" | "DOWN";
 

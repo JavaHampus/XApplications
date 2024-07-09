@@ -1,6 +1,6 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { createApplicationAction } from "@/actions/admin/create-application";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,12 +12,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { createApplicationAction } from "@/actions/admin/create-application";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { useState } from "react";
+import { z } from "zod";
 
 const applicationSchema = z.object({
   name: z

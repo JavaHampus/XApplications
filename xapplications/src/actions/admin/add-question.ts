@@ -3,9 +3,9 @@
 import { DEPARTMENT } from "@/config/config";
 import { authOptions } from "@/lib/auth";
 import { ExtentedUser } from "@/lib/utils";
+import Applications, { QuestionTypes } from "@/schemas/applications";
 import { getServerSession } from "next-auth";
 import { createConnection } from "../database-connection";
-import Applications, { IApplication, QuestionTypes } from "@/schemas/applications";
 
 export const addQuestionAction = async (id: string, question: string, type: QuestionTypes, required: boolean) => {
     const session = await getServerSession(authOptions) as ExtentedUser

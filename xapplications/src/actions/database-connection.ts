@@ -1,4 +1,4 @@
-import { DATABASE } from "@/config/config"
+import { DATABASE } from "@/config/config";
 import { ConnectOptions, connect } from "mongoose";
 
 const options: ConnectOptions = {

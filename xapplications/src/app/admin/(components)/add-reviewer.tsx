@@ -1,5 +1,6 @@
 "use client";
 
+import { addReviewerAction } from "@/actions/admin/add-reviewer";
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -8,11 +9,18 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { UserPlus, X } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
-export const AddReviewer = () => {
+export const AddReviewer = ({ applicationId }: { applicationId: string }) => {
   const [reviewer, setReviewer] = useState<string>("");
+
+  const handleAddReviewer = async () => {
+    const add = await addReviewerAction(applicationId, reviewer);
+
+    if(!add) return toast.error("Failed to add reviewer to the application.");
+  }
 
   return (
     <AlertDialog>
@@ -37,7 +45,7 @@ export const AddReviewer = () => {
           <Input onChange={(e) => setReviewer(e.target.value)} />
         </div>
         <AlertDialogCancel asChild>
-            <Button variant="ghost" className="px-0 hover:bg-transparent">
+            <Button variant="ghost" onClick={handleAddReviewer} className="px-0 hover:bg-transparent">
                 Add Reviewer
             </Button>
         </AlertDialogCancel>

@@ -15,7 +15,10 @@ export const authOptions: NextAuthOptions = {
       async session({session, token, user}) {
         if (token) {
           if (token?.picture?.includes("discord")) {
-            if(session.user) (session.user as any).id = token.sub;
+            if(session.user) {
+              (session.user as any).id = token.sub;
+              (session.user as any).name = token.name;
+            }
           }
         }
         return session;

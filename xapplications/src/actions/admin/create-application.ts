@@ -1,12 +1,11 @@
 'use server'
 
+import { DEPARTMENT } from "@/config/config";
 import { authOptions } from "@/lib/auth";
 import { ExtentedUser } from "@/lib/utils";
-import { IApplication } from "@/schemas/applications";
-import Applications from "@/schemas/applications";
+import Applications, { IApplication } from "@/schemas/applications";
 import { getServerSession } from "next-auth";
 import { createConnection } from "../database-connection";
-import { DEPARTMENT } from "@/config/config";
 
 export const createApplicationAction = async (name: string, description: string, status: string, acceptedRole: string, notifyOnAccept: string, notifyOnDeny: string, neededRole?: string) => {
     const session = await getServerSession(authOptions) as ExtentedUser

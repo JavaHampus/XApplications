@@ -14,7 +14,7 @@ export const Header = ({}: HeaderProps) => {
       className={`py-8 px-24 max-xl:px-40 h-[8vh] text-slate-700 flex max-sm:justify-center items-center text-[15px] flex-row justify-between`}
     >
       <div
-        className={`flex align-middle items-center font-normal space-x-8 text-slate-800`}
+        className={`flex align-middle text-sm items-center font-normal space-x-8 text-slate-800`}
       >
         <a href="/" className={` hover:text-slate-600`}>
           Home
@@ -22,10 +22,10 @@ export const Header = ({}: HeaderProps) => {
         <a href="/applications" className={`hover:text-slate-600`}>
           Applications
         </a>
-        <a href="/#pricing" className={`hover:text-slate-600`}>
-          Dashboard
+        <a href="/reviewer" className={`hover:text-slate-600`}>
+          Reviewer
         </a>
-        <a href="/#pricing" className={`hover:text-slate-600`}>
+        <a href="/admin" className={`hover:text-slate-600`}>
           Admin
         </a>
       </div>

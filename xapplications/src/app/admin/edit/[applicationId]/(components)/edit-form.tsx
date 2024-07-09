@@ -1,6 +1,6 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { editApplicationAction } from "@/actions/admin/edit-application";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,8 +12,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
   Select,
   SelectContent,
@@ -21,10 +19,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { createApplicationAction } from "@/actions/admin/create-application";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { useState } from "react";
-import { editApplicationAction } from "@/actions/admin/edit-application";
+import { z } from "zod";
 
 interface EditFormProps {
   applicationId: string;
@@ -50,7 +48,7 @@ const applicationSchema = z.object({
   acceptedRole: z.string().length(19),
   notifyOnAccept: z.literal("Yes").or(z.literal("No")),
   notifyOnDeny: z.literal("Yes").or(z.literal("No")),
-  neededRole: z.string().length(18).optional().or(z.literal("")),
+  neededRole: z.string().length(19).optional().or(z.literal("")),
 });
 
 export const EditForm = (application: EditFormProps) => {
